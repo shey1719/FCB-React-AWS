@@ -9,7 +9,7 @@ function TasksList() {
 	]);
 
 
-const [taskValue, setTaskValue] = useState("Just another task");
+const [taskValue, setTaskValue] = useState("");
 //  console.log("taskValue: ", taskValue);
 
 const inputChangeHandler = (e) => {
@@ -18,6 +18,7 @@ const inputChangeHandler = (e) => {
 
 const addTaskHandler = () => {
   setTaskItemsList([taskValue, ...taskItemsList]);
+  setTaskValue("");
 };
 
 	return (
@@ -27,6 +28,7 @@ const addTaskHandler = () => {
         placeholder="Create a new task"
         onChange={inputChangeHandler}
         onBlur={addTaskHandler}
+        value={taskValue}
       />
 			<ul>
 				{taskItemsList.map((task, index) => {
