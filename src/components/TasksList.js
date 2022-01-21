@@ -10,11 +10,10 @@ function TasksList() {
 
 
 const [taskValue, setTaskValue] = useState("");
-//  console.log("taskValue: ", taskValue);
 
 const inputChangeHandler = (e) => {
   setTaskValue(e.target.value)
-}
+};
 
 const addTaskHandler = () => {
   setTaskItemsList([taskValue, ...taskItemsList]);
